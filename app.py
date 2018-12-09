@@ -10,7 +10,7 @@ app = Flask(__name__)
 # MongoDB initialization values
 MONGODB_HOST = 'localhost'
 MONGODB_PORT = 27017
-MONGODB_URI = os.environ["DATABASE_URL"]
+MONGODB_URI = os.environ["MONGODB_URI"]
 DBS_NAME = 'heroku_pf3q9hqx'
 COLLECTION_NAME = 'zipData'
 FIELDS = {"_id": False, 'Zip': True, 'Longitude': True, 'Latitude': True,
