@@ -10,7 +10,7 @@ app = Flask(__name__)
 MONGODB_HOST = 'localhost'
 MONGODB_PORT = 27017
 MONGODB_URI = os.environ["DATABASE_URL"]
-DBS_NAME = 'capstoneproject'
+DBS_NAME = 'heroku_pf3q9hqx'
 COLLECTION_NAME = 'zipData'
 FIELDS = {"_id": False, 'Zip': True, 'Longitude': True, 'Latitude': True,
           "MedianSalesPrice": True, "QualifyingIncome": True, "HousingAffordabilityIndex": True}
@@ -41,7 +41,7 @@ def getData():
 
 @app.route('/getZipInfo/<string:zip>')
 def getZipInfo(zip):
-    connection = MongoClient(MONGODB_HOST, MONGODB_PORT)
+    connection = MongoClient(MONGODB_URI)
     collection = connection[DBS_NAME][COLLECTION_NAME]
     zipInfo = collection.find({'Zip': zip}, projection={
                               '_id': False, 'MedianSalesPrice': True, 'QualifyingIncome': True, 'HousingAffordabilityIndex': True})
