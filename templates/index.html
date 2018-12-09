@@ -224,6 +224,16 @@ text { fill: #cbcbcb; font-size: 24px; }
                 .attr("x", 20).attr("y", 400)
                 .style("font-size", 16)
                 .style("fill", "lightcoral");
+
+            svg.append("text").attr("id", "selected")
+                .text("Values < 100 are less affordable")
+                .attr("x", 20).attr("y", 420)
+                .style("font-size", 12);
+            
+            svg.append("text").attr("id", "selected")
+                .text("Values > 100 are more affordable")
+                .attr("x", 20).attr("y", 440)
+                .style("font-size", 12);
             
             svg.append("rect")
                 .attr("x", 960).attr("y", 360)
